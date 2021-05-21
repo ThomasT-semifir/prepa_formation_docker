@@ -1,3 +1,5 @@
-FROM ubuntu
-RUN apt-get update && apt-get install curl -y
-COPY ./data /blabla
+FROM node 
+COPY ./data /data
+WORKDIR /data
+RUN npm install
+CMD ["node", "index.js"]
